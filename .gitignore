@@ -1,0 +1,19 @@
+# System
+.DS_Store
+Thumbs.db
+
+# Claude intern
+.claude/
+
+# Pläne
+plans/
+
+# Große Binärdateien
+Dateien/*.bmp
+Dateien/*.jpg
+Dateien/*.png
+Dateien/*.webp
+Dateien/*.svg
+Dateien/*.Download
+Dateien/Willkommen*
+Dateien/dse_raw.html
