@@ -2,7 +2,7 @@
 
 ## Übersicht
 Recruiting-Automatisierung für **Bad und Heizung Thilo Hennegriff**, Oberkessach (BaWü).
-Bewerber kommen über Meta Lead Ads oder Jobportale, werden per n8n-Formular erfasst und per E-Mail + Telegram an den Kunden weitergeleitet.
+Bewerber kommen über Google Display Ads oder Kleinanzeigen auf die Landing Page, füllen ein eingebettetes Multi-Step-Formular aus und werden per E-Mail + Telegram-Ping an den Kunden weitergeleitet.
 
 ---
 
@@ -12,8 +12,8 @@ Bewerber kommen über Meta Lead Ads oder Jobportale, werden per n8n-Formular erf
 |---|---|
 | n8n Instanz | https://n8n.fons-tel.de |
 | Workflow-ID | `Qt3CWYFEdujyrY55` |
-| Form-Pfad | `/form/hennegriff-recruiting` |
-| Tally Webhook | `https://n8n.fons-tel.de/webhook/hennegriff-tally` |
+| Formular Webhook | `https://n8n.fons-tel.de/webhook/hennegriff-tally` |
+| Landing Page | `website/hennegriff-v5.html` (eingebettetes Multi-Step-Formular) |
 | E-Mail Empfänger | chh@thilohennegriff.de |
 | Telegram Gruppe | Hennegriff Bewerbungen (Chat-ID: -5219904041) |
 
@@ -28,25 +28,25 @@ Bewerber kommen über Meta Lead Ads oder Jobportale, werden per n8n-Formular erf
 ## Status
 
 - [x] n8n Workflow gebaut und aktiviert
-- [x] Tally.so Formular erstellt und Webhook verbunden
-- [x] Telegram parallel zur E-Mail geschaltet
-- [ ] Telegram-Eingang nach Tally-Einreichung bestätigen
+- [x] Multi-Step-Formular direkt in Landing Page v5 eingebettet
+- [x] Telegram auf datensparsamste Benachrichtigung reduziert (DSGVO)
+- [x] DSGVO-Modal mit Datenschutz-Checkbox in v5 eingebaut
+- [x] Projekt auf GitHub hochgeladen
 - [ ] Eigenes Postfach anlegen (z.B. bewerbungen@badundheizung.de)
 - [ ] SMTP-Credential mit echten Werten ersetzen
-- [ ] Anzeigentexte erstellen
-- [ ] Bilder für Meta-Anzeigen erstellen
-- [ ] Meta-Kampagne aufsetzen
+- [ ] Formular-Endtest durchführen (Bewerbung absenden → E-Mail + Telegram prüfen)
+- [ ] Banner-Creative erstellen (1200×628px, Fachkraft + Quereinsteiger)
+- [ ] Google Display Kampagne aufsetzen (Placement: Kleinanzeigen App)
 
 ---
 
 ## Nächste Schritte (Prio-Reihenfolge)
 
-1. **Telegram testen** – Tally-Formular einreichen und prüfen ob Telegram-Nachricht ankommt
-2. **Postfach klären** – Thilo fragen ob er ein bewerbungen@-Postfach einrichten kann
-3. **SMTP aktualisieren** – Credential mit echten Zugangsdaten ersetzen
-4. **E-Mail testen** – Kompletten Durchlauf mit echter E-Mail testen
-5. **Anzeigentexte** – Texte für Meta Ads erstellen (Azubi / Fachkraft / Quereinsteiger)
-6. **Meta-Kampagne** – Aufsetzen sobald Texte und Bilder stehen
+1. **Postfach klären** – Thilo fragen ob er ein bewerbungen@-Postfach einrichten kann
+2. **SMTP aktualisieren** – Credential mit echten Zugangsdaten ersetzen
+3. **Endtest** – Formular auf v5 ausfüllen, E-Mail + Telegram-Ping prüfen
+4. **Banner-Creative** – 1200×628px für Fachkraft + Quereinsteiger (via NotebookLM + Canva)
+5. **Google Display Kampagne** – CPC, Placement Kleinanzeigen App, 40km Radius
 
 ---
 
@@ -54,7 +54,6 @@ Bewerber kommen über Meta Lead Ads oder Jobportale, werden per n8n-Formular erf
 
 | Datei | Beschreibung |
 |---|---|
-| `website/hennegriff-recruiting.html` | Recruiting-Landingpage Entwurf v1 |
-| `website/hennegriff-recruiting-v2.html` | Recruiting-Landingpage Entwurf v2 |
-| `website/index.html` | Mustermann Haustechnik Website-Template |
-| `briefing/claude-code-briefing.html` | Projekt-Briefing Dokument |
+| `website/hennegriff-v5.html` | Aktuelle Landing Page – eingebettetes Formular, DSGVO-Modal |
+| `reference/recruiting-landingpage-standard.md` | Design- & Textstandards für alle Recruiting-Pages |
+| `context/` | Business-Info, Strategie, aktuelle Daten |
